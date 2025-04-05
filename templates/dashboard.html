@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Welcome, {{ username }} ({{ role }})!</h1>
+    {% if role == 'admin' %}
+    <a href="/admin">Go to Admin Panel</a><br />
+    {% endif %}
+    <a href="/logout">Logout</a>
+  </body>
+</html>
