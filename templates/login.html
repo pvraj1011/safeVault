@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h2>{{ 'Register' if register else 'Login' }}</h2>
+    <form method="post">
+      <input name="username" placeholder="Username" required /><br />
+      <input
+        name="password"
+        type="password"
+        placeholder="Password"
+        required
+      /><br />
+      {% if register %}
+      <select name="role">
+        <option value="user">User</option>
+        <option value="admin">Admin</option></select
+      ><br />
+      {% endif %}
+      <button type="submit">{{ 'Register' if register else 'Login' }}</button>
+    </form>
+  </body>
+</html>
